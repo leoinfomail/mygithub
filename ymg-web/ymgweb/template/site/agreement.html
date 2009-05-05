@@ -1,0 +1,21 @@
+{% extends 'site/site_base.html' %}
+
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/site/help/">帮助</a>
+</div>
+<div id="menu_left">
+    <ul id="side_menu">
+        <li><a href="/site/help/">关于幽默感</a></li>
+        <li class="active"><a href="/site/agreement/">协议声明</a></li>
+    </ul>
+</div>
+<div id="menu_right">
+    <div class="common_info">
+        <h3>《使用协议与免责声明》</h3>
+        <p>
+            “幽默感”站点上的所有内容均来至互联网，并且不通过出售这些内容获利。如果“幽默感”上的内容侵犯了您的版权，请提供有效证明，我们核实后将第一时间删除。
+        </p>
+    </div>
+</div>
+{% endblock %}

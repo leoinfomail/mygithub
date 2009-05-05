@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+	<text-article>
+		<title><![CDATA[<mytitle>]]></title>
+		<body>
+			<text><![CDATA[<mytext>]]></text>
+		</body>
+	</text-article>
+	<text-article>
+		<title><![CDATA[<mytitle2>]]></title>
+		<body>
+			<text><![CDATA[<mytext2>]]></text>
+		</body>
+	</text-article>
+</article>

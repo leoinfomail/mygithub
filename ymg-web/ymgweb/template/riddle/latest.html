@@ -1,0 +1,39 @@
+{% extends 'riddle/riddle_base.html' %}
+{% block title %}谜语 - 幽默感{% endblock %}
+{% load filters %}
+{% load paginator %}
+
+{% block content %}
+<div id="big_left">
+    <h1 class="channel">谜语频道</h1>
+    <div class="cm_menu">
+        <ul>
+            <li>
+                <a href="/riddle/">近期最受欢迎谜语</a>
+            </li>
+            <li class="current">
+                <a href="/riddle/latest/">更多最新谜语</a>
+            </li>
+        </ul>
+    </div>
+    <div class="sepbar10"></div>
+    {% for riddle in object_list %}
+    <div class="list_box_s">
+        <div class="list_question">
+            <a href="/riddle/view/{{riddle.key.id}}">{{riddle.subject|simple_truncate}}</a>
+        </div>
+    </div>
+    <div class="list_view">
+        <a href="/riddle/view/{{riddle.key.id}}">
+            <div class="list_view_num">{{ riddle.view_count }}</div>
+        </a>
+    </div>
+    <div class="clear_both"></div>
+    {% endfor %}
+    {% paginator %}
+</div>
+<div id="small_right">
+    {% load recommend %}
+    {% riddle_acd %}
+</div>
+{% endblock %}

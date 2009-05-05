@@ -1,0 +1,25 @@
+{% load filters %}
+<h2>小默推荐之谜语</h2>
+<div id="riddle_acd">
+    {% for riddle in riddle_acd %}
+    <h5 class="acd_title">{{riddle.subject|simple_truncate_no_scope:20}}</h5>
+    <div class="acd_element">
+        <a href="/riddle/view/{{riddle.key.id}}">{{riddle.subject|simple_truncate}}</a>
+    </div>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+    window.addEvent('domready', function() {
+        new Accordion($('riddle_acd'), 'h5.acd_title', 'div.acd_element', {
+            opacity: false,
+            onActive: function(title, element){
+                title.setStyle('color', '#fff');
+                title.setStyle('background', '#69c');
+            },
+            onBackground: function(title, element){
+                title.setStyle('color', '#0088CC');
+                title.setStyle('background', '#ceebfb');
+            }
+        });
+    });
+</script>

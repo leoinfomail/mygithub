@@ -1,0 +1,32 @@
+{% extends 'article/article_base.html' %}
+{% block head_js %}
+<script type="text/javascript" src="/static/fckeditor/fckeditor.js"></script>
+{% endblock %}
+{% block title %}修改文章 - 幽默感{% endblock %}
+
+{% block content %}
+<h1>修改文章</h1>
+<div id="big_left">
+    {% include 'common/msg_div.html' %}
+    <form action="/article/edit/{{article_id}}" method="POST">
+        <table class="form_table">
+            {{form}}
+        </table>
+        <script type="text/javascript">
+            <!--
+            var oFCKeditor = new FCKeditor( 'id_content' ) ;
+            oFCKeditor.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor.Config['CustomConfigurationsPath'] = oFCKeditor.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor.ToolbarSet = "Basic" ;
+            //oFCKeditor.ToolbarSet = "Default" ;
+            oFCKeditor.Height	= 300 ;
+            oFCKeditor.ReplaceTextarea();
+            //-->
+        </script>
+        <input type="submit" value="修改" />
+    </form>
+</div>
+<div id="small_right">
+    small
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'manage/simple_base.html' %}
+{% load filters %}
+{% load paginator %}
+{% block content %}
+<div>
+    <h1>{{type}} - ({{counts}})</h1>
+    <table class="ymg_table">
+        <thead>
+            <tr>
+                <th class="ymg_th">id</th>
+                <th class="ymg_th">type</th>
+                <th class="ymg_th">status</th>
+                <th class="ymg_th">author</th>
+                <th class="ymg_th">subject</th>
+                <th class="ymg_th">content</th>
+                <th class="ymg_th">content_a</th>
+                <th class="ymg_th">view_count</th>
+                <th class="ymg_th">good_score</th>
+                <th class="ymg_th">bad_score</th>
+                <th class="ymg_th">property</th>
+                <th class="ymg_th">source_type</th>
+                <th class="ymg_th">source_link</th>
+                <th class="ymg_th">create_time</th>
+                <th class="ymg_th">update_time</th>
+                <th class="ymg_th">编辑/删除</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in object_list %}
+            <tr>
+                <td class="ymg_td">{{data.key.id}}</td>
+                <td class="ymg_td">{{data.type}}</td>
+                <td class="ymg_td">{{data.status}}</td>
+                <td class="ymg_td">{{data.author}}</td>
+                <td class="ymg_td">{{data.subject|simple_truncate:10}}</td>
+                <td class="ymg_td">{{data.content|simple_truncate:10}}</td>
+                <td class="ymg_td">{{data.content_a|simple_truncate:10}}</td>
+                <td class="ymg_td">{{data.view_count}}</td>
+                <td class="ymg_td">{{data.good_score}}</td>
+                <td class="ymg_td">{{data.bad_score}}</td>
+                <td class="ymg_td">{{data.property}}</td>
+                <td class="ymg_td">{{data.source_type}}</td>
+                <td class="ymg_td">{{data.source_link}}</td>
+                <td class="ymg_td">{{data.create_time|date:"Y/m/d H/i/s"}}</td>
+                <td class="ymg_td">{{data.update_time|date:"Y/m/d H/i/s"}}</td>
+                <td class="ymg_td"><a href="/manage/content_edit/{{data.key.id}}" target="_blank">编辑</a>/<a href="/manage/{{type}}_delete/{{data.key.id}}">删除</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% paginator %}
+</div>
+{% endblock%}

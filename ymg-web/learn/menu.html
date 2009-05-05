@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>nav</title>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/more.js"></script>
+<script type=text/javascript>
+var ninjas = new Hash({ 
+  red: {side: 'unknown'}, 
+  black: {side: 'evil'}, 
+  white: {side: 'good'} 
+}); 
+ninjas.each(function(value, key){ 
+  //alert(key + ' ninja is on the side of ' + value.side); 
+});
+var myFun = function() {
+	$A(arguments).each(function(value, index) {
+		alert(index + '_' + value);
+	});
+}
+array = ['a', 'b', 'c'];
+//myFun.run(array);
+</script>
+<script type=text/javascript>
+<!--
+var LastLeftID = "";
+
+function DoMenu(emid){
+	var obj = document.getElementById(emid); 
+	obj.className = (obj.className.toLowerCase() == "expanded"?"collapsed":"expanded");
+	if((LastLeftID!="")&&(emid!=LastLeftID)){
+		document.getElementById(LastLeftID).className = "collapsed";
+	}
+		LastLeftID = emid;
+}
+-->
+</script>
+
+<style type="text/css">
+<!--
+body {
+ font-family: Arial,Verdana,Helvetica,sans-serif;
+ font-size:12px;
+}
+#nav {
+ width:180px;
+ list-style-type: none;
+ text-align:left;
+ margin:10px 0 0 10px;
+}
+
+#nav a {
+ width: 180px; 
+ display: block;
+ padding:5px 0 5px 20px;
+}
+
+#nav li {
+ background:#cccccc;
+ border-bottom:#ffffff 1px solid;
+ float:left;
+}
+
+#nav li a:hover{
+ background:#cc0000;
+}
+
+#nav a:link  {
+ color:#666;
+ text-decoration:none;
+}
+
+#nav a:visited  {
+ color:#666;
+ text-decoration:none;
+}
+
+#nav a:hover  {
+ color:#ffffff;
+ text-decoration:none;
+ font-weight:bold;
+}
+
+#nav li ul {
+ list-style:none;
+ text-align:left;
+ padding:0;
+}
+
+#nav li ul li{ 
+ background: #ebebeb;
+}
+
+#nav li ul a{
+ padding-left:20px;
+ width:180px;
+}
+
+#nav li ul a:link  {
+ color:#666;
+ text-decoration:none;
+}
+#nav li ul a:visited  {
+ color:#666;
+ text-decoration:none;
+}
+#nav li ul a:hover {
+ color:#f3f3f3;
+ text-decoration:none;
+ font-weight:normal;
+ background:#cc0000;
+}
+
+#nav li:hover ul {
+ left: auto;
+}
+#nav li.sfhover ul {
+ left: auto;
+}
+#content {
+ clear: left; 
+}
+#nav ul.collapsed {
+ display: none;
+}
+-->
+</style>
+</head>
+<body>
+<ul id="nav">
+	<li><a href="#Menu=ChildMenu1"  onclick="DoMenu('ChildMenu1')">menu1</a>
+		 <ul id="ChildMenu1" class="collapsed">
+			 <li><a href="#">first</a></li>
+			 <li><a href="#">second</a></li>
+			 <li><a href="#">third</a></li>
+			 <li><a href="#">forth</a></li>
+			 <li><a href="#">fifth</a></li>
+		 </ul>
+	</li>
+	<li><a href="#Menu=ChildMenu2" onclick="DoMenu('ChildMenu2')">menu2</a>
+		 <ul id="ChildMenu2" class="collapsed">
+			 <li><a href="#">first</a></li>
+			 <li><a href="#">second</a></li>
+			 <li><a href="#">third</a></li>
+			 <li><a href="#">forth</a></li>
+			 <li><a href="#">fifth</a></li>
+		 </ul>
+	</li>
+	<li><a href="#Menu=ChildMenu3" onclick="DoMenu('ChildMenu3')">menu3</a>
+		 <ul id="ChildMenu3" class="collapsed">
+			 <li><a href="#">first</a></li>
+			 <li><a href="#">second</a></li>
+			 <li><a href="#">third</a></li>
+			 <li><a href="#">forth</a></li>
+			 <li><a href="#">fifth</a></li>
+		 </ul>
+	</li>
+	<li><a href="#Menu=ChildMenu4" onclick="DoMenu('ChildMenu4')">menu4</a>
+		 <ul id="ChildMenu4" class="collapsed">
+			 <li><a href="#">first</a></li>
+			 <li><a href="#">second</a></li>
+			 <li><a href="#">third</a></li>
+			 <li><a href="#">forth</a></li>
+			 <li><a href="#">fifth</a></li>
+		 </ul>
+	</li>
+</ul>
+
+<script type="text/javascrpt">
+$('nav').addClass('fuck');
+</script>
+
+<style type="text/css">
+.style1{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #96C2F1;
+background-color: #EFF7FF
+}
+
+.style2{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #9BDF70;
+background-color: #F0FBEB
+}
+
+.style3{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #BBE1F1;
+background-color: #EEFAFF
+}
+
+.style4{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #CCEFF5;
+background-color: #FAFCFD
+}
+
+.style5{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #FFCC00;
+background-color: #FFFFF7
+}
+
+.style6{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #92B0DD;
+background-color: #FFFFFf
+}
+.style6 h5{
+margin: 1px;
+background-color: #E2EAF8;
+height: 24px;
+}
+
+.style7{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #A9C9E2;
+background-color: #E8F5FE
+}
+
+.style8{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #E3E197;
+background-color: #FFFFDD
+}
+
+.style9{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #ADCD3C;
+background-color: #F2FDDB
+}
+
+.style10{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #F8B3D0;
+background-color: #FFF5FA
+}
+
+.style11{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #D3D3D3;
+background-color: #F7F7F7
+}
+
+.style12{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #BFD1EB;
+background-color: #F3FAFF
+}
+
+.style13{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #FFDD99;
+background-color: #FFF9ED
+}	
+
+.style14{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #CACAFF;
+background-color: #F7F7FF
+}	
+
+.style15{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #A5B6C8;
+background-color: #EEF3F7
+}
+.style16{
+width: 800px;
+height: 100px;
+margin: 0px auto;
+margin-bottom:20px;
+border:1px solid #CEE3E9;
+background-color: #F1F7F9
+}	
+</style>
+<div  id="kaka">kaka</div>
+<div class="style1"><h5></h5></div>
+<div class="style2"><h5></h5></div>
+<div class="style6"><h5></h5></div>
+<div class="style3"></div>
+<div class="style4"></div>
+<div class="style5"></div>
+<div class="style7"></div>
+<div class="style8"></div>
+<div class="style9"></div>
+<div class="style10"></div>
+<div class="style11"></div>
+
+<div class="style12"></div>
+<div class="style13"></div>
+<div class="style14"></div>
+<div class="style15"></div>
+<div class="style16"></div>
+
+<script>
+var c = new Fx.tween($('kaka'));
+c.start('opacity',0).chain(function(){
+	c.start('opacity',1);
+});
+</script>
+</body>
+</html>

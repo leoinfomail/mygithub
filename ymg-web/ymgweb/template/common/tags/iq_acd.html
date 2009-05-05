@@ -1,0 +1,25 @@
+{% load filters %}
+<h2>小默推荐之脑筋急转弯</h2>
+<div id="iq_acd">
+    {% for iq in iq_acd %}
+    <h5 class="acd_title">{{iq.subject|simple_truncate:20}}</h5>
+    <div class="acd_element">
+        <a href="/iq/view/{{iq.key.id}}">{{iq.subject|list_truncate}}</a>
+    </div>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+    window.addEvent('domready', function() {
+        new Accordion($('iq_acd'), 'h5.acd_title', 'div.acd_element', {
+            opacity: false,
+            onActive: function(title, element){
+                title.setStyle('color', '#fff');
+                title.setStyle('background', '#69c');
+            },
+            onBackground: function(title, element){
+                title.setStyle('color', '#0088CC');
+                title.setStyle('background', '#ceebfb');
+            }
+        });
+    });
+</script>

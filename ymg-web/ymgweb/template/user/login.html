@@ -1,0 +1,26 @@
+{% extends 'user/user_base.html' %}
+
+{% block title %}登录“幽默感”{% endblock %}
+
+{% block content %}
+<h1>用户登录</h1>
+<div id="mid_left">
+    {% include 'common/msg_div.html' %}
+    <form action="/user/login/" method="POST">
+        <input type="hidden" name="redirect_to" value="{{redirect_to|default:""}}">
+            <table class="form_table">
+            {{form}}
+        </table>
+        <div class="form_action_box">
+            <input type="submit" class="cm_btn" value="登录" />
+        </div>
+    </form>
+</div>
+<div id="mid_right">
+    <h2>抱歉</h2>
+    <div>
+        <p>“幽默感”暂时未开放注册，如果您希望注册的话，请来信告知我们。</p>
+        <p>我们的联系方式在<a href="/site/help/">帮助</a>中。</p>
+    </div>
+</div>
+{% endblock %}

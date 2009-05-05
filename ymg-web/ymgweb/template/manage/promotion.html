@@ -1,0 +1,40 @@
+{% extends 'manage/manage_base.html' %}
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a>
+    >>
+    <a href="/manage/">YouMoGan管理平台</a>
+</div>
+<div id="menu_left">
+    <ul id="side_menu">
+        <li><a href="/manage/">manage</a></li>
+        <li class="active"><a href="/manage/promotion/">promotion</a></li>
+        <li><a href="/manage/url_list/">url_list</a></li>
+    </ul>
+</div>
+<div id="menu_right">
+    <h1>Promotion</h1>
+    <a href="/manage/add_promotion/">==Add New Promotion==</a>
+    <div>
+        <table class="ymg_table">
+            <thead>
+                <th class="ymg_th">项目</th>
+                <th class="ymg_th">内容</th>
+                <th class="ymg_th">描述</th>
+                <th class="ymg_th">操作</th>
+            </thead>
+            <tbody>
+                {%for promotion in promotion_set%}
+                <tr>
+                    <td class="ymg_td">{{promotion.subject}}</td>
+                    <td class="ymg_td">{{promotion.content}}</td>
+                    <td class="ymg_td">{{promotion.description}}</td>
+                    <td class="ymg_td"><a href="/manage/edit_promotion/{{promotion.key.id}}">编辑</a> /
+                    <a href="/manage/delete_promotion/{{promotion.key.id}}">删除</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock%}

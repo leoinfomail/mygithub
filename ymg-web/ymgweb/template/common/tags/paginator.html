@@ -1,0 +1,12 @@
+<div class="list_paginator">
+	{% if has_previous %}<a href="{% if url_prefix %}{{url_prefix}}{%endif%}{{ previous }}">< 上一页</a>
+	&nbsp;
+	{% endif %}
+	{% for page_number in page_numbers %}
+	{% ifnotequal page page_number %}<a href="{% if url_prefix %}{{url_prefix}}{%endif%}{{ page_number }}">{{page_number}}</a>
+	{% else %}<span>{{page_number}}</span>
+	{% endifnotequal %}
+	{% endfor %}
+	{% if has_next %}<a href="{% if url_prefix %}{{url_prefix}}{%endif%}{{ next }}">下一页 ></a>
+	{% endif %}
+</div>

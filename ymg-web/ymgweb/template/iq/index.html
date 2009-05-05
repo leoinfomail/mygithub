@@ -1,0 +1,39 @@
+{% extends 'iq/iq_base.html' %}
+{% block title %}脑筋急转弯 - 幽默感{% endblock %}
+{% load filters %}
+
+{% block content %}
+<div id="big_left">
+    <h1 class="channel">脑筋急转弯频道</h1>
+    <div class="cm_menu">
+        <ul>
+            <li class="current">
+                <a href="/iq/">近期最受欢迎脑筋急转弯</a>
+            </li>
+            <li>
+                <a href="/iq/latest/">更多最新脑筋急转弯</a>
+            </li>
+        </ul>
+    </div>
+    <div class="sepbar10"></div>
+    {% for iq in channel_best_iq %}
+    <div class="list_box_s">
+        <div class="list_question">
+            <a href="/iq/view/{{iq.key.id}}">{{iq.subject|simple_truncate}}</a>
+        </div>
+    </div>
+    <div class="list_view">
+        <a href="/iq/view/{{iq.key.id}}">
+            <div class="list_view_num">{{ iq.view_count }}</div>
+        </a>
+    </div>
+    <div class="clear_both"></div>
+    {% endfor %}
+    <div class="list_see_more"><a href="/iq/latest/">更多脑筋急转弯 >></a></div>
+</div>
+<div id="small_right">
+    {% load recommend %}
+    {% iq_acd %}
+    {% iq_static_info %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load filters %}
+<h2>小默推荐之幽默</h2>
+<div id="humor_acd">
+    {% for humor in humor_acd %}
+    <h5 class="acd_title">{{humor.subject|simple_truncate}}</h5>
+    <div class="acd_element">
+        <a href="/humor/view/{{humor.key.id}}">{{humor.content|list_truncate}}</a>
+    </div>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+    window.addEvent('domready', function() {
+        new Accordion($('humor_acd'), 'h5.acd_title', 'div.acd_element', {
+            opacity: false,
+            onActive: function(title, element){
+                title.setStyle('color', '#fff');
+                title.setStyle('background', '#69c');
+            },
+            onBackground: function(title, element){
+                title.setStyle('color', '#0088CC');
+                title.setStyle('background', '#ceebfb');
+            }
+        });
+    });
+</script>

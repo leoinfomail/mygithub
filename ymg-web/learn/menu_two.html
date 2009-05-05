@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>nav</title>
+<script type="text/javascript">
+<!--
+startList = function() {
+  if (document.all&&document.getElementById) {
+    navRoot = document.getElementById("nav");
+    for (i=0; i<navRoot.childNodes.length; i++) {
+      node = navRoot.childNodes[i];
+      if (node.nodeName=="LI") {
+        node.onmouseover=function() {
+          this.className+="on"; 
+        } 
+        node.onmouseout=function() {
+          this.className=this.className.replace("on", ""); 
+        }
+      }
+    }
+  }
+}
+window.onload=startList;
+-->
+</script>
+<style type="text/css">
+<!--
+body {
+  font-size: 12px 
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 200px;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li ul {
+  position: absolute;
+  left: 199px;
+  top: 0;
+  display: none;
+  list-style: none;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  background: #cccccc;
+  padding:5px 0 5px 20px;
+  border: 1px solid #ffffff;
+  border-bottom: 0;
+  color:#666666;
+}
+
+ul li a:hover {
+  background: #cc0000;
+  color:#ffffff;
+  font-weight:bold;
+}
+
+* html ul li {
+  float: left;
+  height: 1%;
+}
+* html ul li a {
+  height: 1%;
+}
+
+li:hover ul, li.on ul {
+  display: block;
+} 
+
+-->
+</style>
+</head>
+
+<body>
+<ul id="nav">
+	<li><a href="#">menu1</a>
+		<ul class="nav2">
+			<li><a href="#">first</a></li>
+			<li><a href="#">second</a></li>
+		</ul>
+	</li>
+	<li><a href="#">menu2</a>
+		<ul class="nav2">
+			<li><a href="#">first</a></li>
+			<li><a href="#">second</a></li>
+			<li><a href="#">third</a></li>
+		</ul>
+	</li>
+	<li><a href="#">menu3</a>
+		<ul class="nav2">
+			<li><a href="#">first</a></li>
+			<li><a href="#">second</a></li>
+			<li><a href="#">third</a></li>
+			<li><a href="#">forth</a></li>
+			<li><a href="#">fifth</a></li>
+		</ul>
+	</li>
+	<li><a href="#">menu4</a>
+		<ul class="nav2">
+			<li><a href="#">first</a></li>
+			<li><a href="#">second</a></li>
+			<li><a href="#">third</a></li>
+			<li><a href="#">forth</a></li>
+			<li><a href="#">fifth</a></li>
+			<li><a href="#">sixth</a></li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>
+
+ 

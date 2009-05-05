@@ -1,0 +1,92 @@
+技术问题列表：
+gae1000限制
+推荐的自动更新办法
+推荐链接展示，例子https://addons.mozilla.org/zh-CN/firefox/addon/7943
+fckeditor的null config问题
+评分模块链接样式 http://3xspace.cn/cool-games-icons1228.htm
+图片验证-wait
+评论模式
+图标收集与下载
+
+
+http://sourceforge.net/projects/pythonnetbeans6
+
+http://www.django-cms.org/
+
+    #------------------
+    count = memcache.get('count')
+    if not count:
+        count = Article.all().count()
+        memcache.set('count',count,5)
+    #-------------------
+    if request.session.get('sid', False):
+        logging.debug('sid is none')
+        request.session['sid'] = 'leoyoung'
+
+                    {% for humor in home_quote_humor %}
+                    <li id="iq_promote_{{forloop.counter}}" style="">{{humor.title}}</li>
+                    {% endfor %}
+
+比如各种类型的相声段子，以后可以发展为音频，视频
+
+与豆瓣不同，幽默等可以使用短信，订阅。了解短信的赚钱方式
+
+避免手工添加和修改文章，因为数据迁移等等问题，不允许这么做
+
+做专辑，比如地震四川幽默web2.0？
+做网络术语解释，比如打酱油，web2.0？
+http://ubetcha.r08.railsrumble.com/ 提示登录
+有奖建议模块，pd2.0
+http://www.miyumiyu.cn/ 谜语
+joke.pcpop.com
+http://www.3fdd.cn/
+http://www.jj59.com
+http://www.kadomedia.de/cms/k38.Welcome.htm  图片滤镜
+http://www.payback.dk/soyouwant.htm 图片切换效果
+扬耀网络科技 文字渐变http://www.sunnymmc.com
+http://validator.w3.org/     list页面，很清爽简介，但不利于评分之类的
+http://humor.godcn.net/
+www.wk69.cn
+flash.haha365.com
+www.oicq88.com/iq
+http://blog.sina.com.cn/s/blog_569a1cce0100agun.html mootools
+1。健康活泼的心灵。 2。有趣味的思想。 3。知识广搏。 4。拥有智慧。 5。忠于真实。 6。情趣高雅。 7。心存善念。 8。自嘲。 9。时间，地点，人物。 10。微笑。
+http://www.mediatemple.net/webhosting/gs/django.html  图片特效放大缩小
+http://mad4milk.net/  contactus
+
+#--------------  todo   ------------------
+list
+右边推荐使用点击窗格，限制标题长度，限制内容长度（大）
+首页，及右边下面，使用文字渐变，选择好评且长度较小的。
+幽默查看链接
+nj查看链接，分有答案，无答案
+报告问题的按钮，默认问题，可以下拉选择：排版有无，重复
+
+keywords为标题+幽默，笑话，幽默感，humor，joke
+desc中加入部分主题文字，限制长度 +幽默，笑话，幽默感，humor，joke
+title为标题+幽默，笑话，幽默感
+注意用英文逗号分隔
+
+
+
+拷贝文字：
+《第四个礼拜 》- www.YouMoGan.com - 幽默感
+
+一男生经常晚上到操场练习跑步，有一天，他发现有个女孩也是天天如此。
+
+
+#----------------------------------------------------------------------
+关健字最好是1到3个，而且关健字的选择也是相当我重要的。要选择跟页面内容相关的关健字。最好是搜索引擎热门关健字，
+页面标题跟页面描述里最好包含关健字，而且页面描述最好是描述网页内容很通顺的一句话。 
+
+（1）寻找确定关键词
+非常重要！了解你的用户，了解你用户的搜索习惯，确定关键词。一般流程是通过百度相关关键词查找与主关键词相关的词，然后确定你的目标词（一般为3-6个关键词），作者认为确定关键词，寻找关键词是seo中最重要的。如果你通过ggad之类的广告赚钱的话，研究指数高而竞争度低的关键词可以给你带来很多的流量，比如“163.com免费邮箱”的例子。关键词指数也反映了网友上网搜索的普遍情况，了解关键词就是更好的了解你的客户需求
+
+（2）强化内容
+永远要记住，对用户的价值，是网站的灵魂，可以适当对内容中的关键字加粗，变换颜色，内容标题，meta标签和图片的alt标签中出现关键字。
+
+（3）内部链接和外部链接
+外部链接在搜索引擎的排名和收录中起着非常显著的效果。内部链接让搜索引擎知道你认为你的网站什么是重要的，外部链接让搜索引擎认为你的哪些网页对大家是重要的，如果会写软文的话非常好，不会的话可以多到一些论坛，博客或者dig网站比如发文章，用锚文字链接到你要排名的网页，注意：一定不要群发，发文章时发有价值的文章，锚文字的关键词链接非常有效。
+
+（4）分析统计来源
+根据数据，确定关键词，循环到第一步。通过统计了解关键词来路，进一步加强内容，內链等。稳固排名。相关工具：站长统计、51.la 

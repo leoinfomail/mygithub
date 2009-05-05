@@ -1,0 +1,153 @@
+{% extends 'common/common_base.html' %}
+{% load filters %}
+
+{% block body %}
+<div id="main_content">
+    {% block content %}
+    <h1 class="channel">欢迎来到幽默感</h1>
+    <div id="big_left">
+        <div>
+            <img alt="幽默感" src="/static/img/site/index_main.gif" />
+        </div>
+        <h2>近期最受欢迎...</h2>
+        <div class="cm_menu">
+            <ul>
+                <li id="humor_li" class="current">
+                    <a href="#" id="best_humor">幽默</a>
+                </li>
+                <li id="iq_li">
+                    <a href="#" id="best_iq">脑筋急转弯</a>
+                </li>
+                <li id="riddle_li">
+                    <a href="#" id="best_riddle">谜语</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sepbar10"></div>
+        <div id="best_data">
+            {% for humor in home_best_humor %}
+            <div class="list_box">
+                <div class="list_title">
+                    <a href="/humor/view/{{humor.key.id}}">{{humor.subject|simple_truncate}}</a>
+                </div>
+                <div class="list_content">
+                    {{humor.content|list_truncate}}
+                </div>
+            </div>
+            <div class="list_view">
+                <a href="/humor/view/{{humor.key.id}}">
+                    <div class="list_view_num">{{ humor.view_count }}</div>
+                </a>
+            </div>
+            <div class="clear_both"></div>
+            {% endfor %}
+            <div class="list_see_more"><a href="/humor/">更多幽默 >></a></div>
+        </div>
+    </div>
+    <!-- end left -->
+    <div id="small_right">
+        {% if login_form %}
+        <div class="cm_bg_rnd">
+            <span>
+                <h2>登录...</h2>
+                <form style="margin:0px;" action="/user/login/" method="POST">
+                    <table>
+                        {{login_form}}
+                        <tr><th></th><td><input type="submit" class="cm_btn" value="登录" />
+                        <a style="font-size:12px;" href="/user/join/">还没有帐号，注册一个...</a></td></tr>
+                    </table>
+                </form>
+            </span>
+        </div>
+        {% endif %}
+        {% if home_quote_humor %}
+        <div class="pq_s">
+            <span>
+                <p><b>{{home_quote_humor.subject}}</b></p>
+                <p>{{home_quote_humor.content}}</p>
+            </span>
+        </div>
+        {% endif %}
+        {% if home_quote_iq %}
+        <div class="pq_s">
+            <span>
+                <p><a href="/iq/view/{{home_quote_iq.key.id}}">{{home_quote_iq.subject}}</a></p>
+            </span>
+        </div>
+        {% endif %}
+        {% if home_quote_riddle %}
+        <div class="pq_s">
+            <span>
+                <p><a href="/riddle/view/{{home_quote_riddle.key.id}}">{{home_quote_riddle.subject}}</a></p>
+            </span>
+        </div>
+        {% endif %}
+    </div>
+    <!-- end right -->
+    <script type="text/javascript">
+        var fun_data = function(e){
+            e.stop();
+            var best_data = $('best_data');
+            var success = function(response) {
+                best_data.removeClass('ajax_loading');
+                best_data.setStyle('opacity',0);
+                best_data.set('html', response);
+                new Fx.Tween(best_data,{
+                    property:'opacity',
+                    duration:500
+                }).start(0,1);
+            }
+            var failure = function(){
+                best_data.removeClass('ajax_loading');
+                best_data.set('html', '<div class="info_big_box">对不起。服务器繁忙，请稍后再试。</div>');
+            }
+            var switchData = function () {
+                if(e.target == $('best_riddle')){
+                    $('humor_li').removeClass('current');
+                    $('iq_li').removeClass('current');
+                    $('riddle_li').addClass('current');
+                    new Request({
+                        url: '/home_best_riddle/',
+                        onSuccess: success,
+                        onFailure: failure
+                    }).send();
+                } else if (e.target == $('best_humor')) {
+                    $('riddle_li').removeClass('current');
+                    $('iq_li').removeClass('current');
+                    $('humor_li').addClass('current');
+                    new Request({
+                        url: '/home_best_humor/',
+                        onSuccess: success,
+                        onFailure: failure
+                    }).send();
+                } else if (e.target == $('best_iq')) {
+                    $('riddle_li').removeClass('current');
+                    $('humor_li').removeClass('current');
+                    $('iq_li').addClass('current');
+                    new Request({
+                        url: '/home_best_iq/',
+                        onSuccess: success,
+                        onFailure: failure
+                    }).send();
+                }
+            }
+            var showAjax = function() {
+                best_data.empty().setStyle('opacity',1).addClass('ajax_loading');
+            }
+            new Fx.Tween(best_data,{
+                property:'opacity',
+                duration:200
+            }).start(1,0).chain(showAjax).chain(switchData(e));
+        }
+        var fun_switch_pq_data=function() {
+
+        }
+        window.addEvent('domready',function(){
+            $('best_humor').addEvent('click',fun_data);
+            $('best_riddle').addEvent('click',fun_data);
+            $('best_iq').addEvent('click',fun_data);
+        });
+    </script>
+    {% endblock %}
+</div>
+{% endblock %}

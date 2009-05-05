@@ -1,0 +1,25 @@
+{% extends 'manage/manage_base.html' %}
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/manage/">YouMoGan管理平台</a>
+</div>
+<div id="menu_left">
+    <ul id="side_menu">
+        <li><a href="/manage/">manage</a></li>
+        <li class="active"><a href="/manage/promotion/">promotion</a></li>
+    </ul>
+</div>
+<div id="menu_right">
+    <div>
+        {% include 'common/msg_div.html' %}
+        <form action="/manage/edit_promotion/{{promotion_id}}" method="POST">
+            <table class="form_table">
+                {{form}}
+            </table>
+            <div class="form_action_box">
+                <input type="submit" class="cm_btn" value="修改" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock%}

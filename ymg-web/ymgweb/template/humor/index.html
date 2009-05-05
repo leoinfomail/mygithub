@@ -1,0 +1,41 @@
+{% extends 'humor/humor_base.html' %}
+{% block title %}幽默 - 幽默感{% endblock %}
+{% load filters %}
+
+{% block content %}
+<div id="big_left">
+    <h1 class="channel">幽默频道</h1>
+    <div class="cm_menu">
+        <ul>
+            <li class="current">
+                <a href="/humor/">近期最受欢迎幽默</a>
+            </li>
+            <li>
+                <a href="/humor/latest/">更多最新幽默</a>
+            </li>
+        </ul>
+    </div>
+    <div class="sepbar10"></div>
+    {% for humor in channel_best_humor %}
+    <div class="list_box">
+        <div class="list_title">
+            <a href="/humor/view/{{humor.key.id}}">{{humor.subject|simple_truncate}}</a>
+        </div>
+        <div class="list_content">
+            {{humor.content|list_truncate}}
+        </div>
+    </div>
+    <div class="list_view">
+        <a href="/humor/view/{{humor.key.id}}">
+            <div class="list_view_num">{{ humor.view_count }}</div>
+        </a>
+    </div>
+    <div class="clear_both"></div>
+    {% endfor %}
+    <div class="list_see_more"><a href="/humor/latest/">更多幽默 >></a></div>
+</div>
+<div id="small_right">
+    {% load recommend %}
+    {% humor_acd %}
+</div>
+{% endblock %}

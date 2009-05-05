@@ -1,0 +1,25 @@
+{% extends 'user/user_base.html' %}
+
+{% block title %}快速注册“幽默感”帐号{% endblock %}
+
+{% block content %}
+<h1>快速注册</h1>
+<div id="mid_left">
+    {% include 'common/msg_div.html' %}
+    <form action="/user/join/" method="POST">
+        <table class="form_table">
+            {{form}}
+            <tr><th></th><td><input type="submit" class="cm_btn" value="完成注册" /></td></tr>
+        </table>
+    </form>
+</div>
+<div id="mid_right">
+    <h2>注册小贴士</h2>
+    <div>
+        <p>不会对第三方公开你的Email</p>
+        <p>建议填写常用的Email地址，这样你就不会错过精彩内容</p>
+        <br/>
+        <p>>> <a href="/user/login/">已注册请登录</a></p>
+    </div>
+</div>
+{% endblock %}

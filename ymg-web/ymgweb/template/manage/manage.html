@@ -1,0 +1,20 @@
+{% extends 'manage/manage_base.html' %}
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/manage/">YouMoGan管理平台</a>
+</div>
+<div id="menu_left">
+    <ul id="side_menu">
+        <li class="active"><a href="/manage/">manage</a></li>
+        <li><a href="/manage/promotion/">promotion</a></li>
+        <li><a href="/manage/url_list/">url_list</a></li>
+    </ul>
+</div>
+<div id="menu_right">
+    <ul>
+        <li><a href="/manage/humor_data/" target="_blank">humor data list</a></li>
+        <li><a href="/manage/iq_data/" target="_blank">iq data list</a></li>
+        <li><a href="/manage/riddle_data/" target="_blank">riddle data list</a></li>
+    </ul>
+</div>
+{% endblock%}

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>{% block title %}幽默感 - 努力成为最好的中文幽默互动社区{% endblock %}</title>
+        {% block meta %}
+        <meta name="keywords" content="幽默感,幽默,笑话,幽默大全,笑话大全,humor,joke" />
+        <meta name="description" content="幽默感,幽默,笑话,幽默大全,笑话大全,humor,joke" />
+        <meta name="verify-v1" content="/2IQj6wEmkdQM2G2SJ4ifySyx4y0IzXMitl0+XNUQig=" />
+        {% endblock %}
+        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+        {% block css %}
+    <link href="/static/css/main2.css" rel="stylesheet" type="text/css" /></head>
+    <style type="text/css">
+        /*temp*/
+    </style>
+    {% endblock %}
+    {% block head_js %}
+    <script type="text/javascript" src="/static/js/core-yc.js"></script>
+    <script type="text/javascript" src="/static/js/more-yc.js"></script>
+    {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+        <div id="header">
+            <div id="head_left">
+                <a href="/"><img src="/static/img/site/logo.gif" alt="幽默感首页" style="border:0px;"/></a>
+            </div>
+            <div id="head_right">
+                {% load status %}
+                {% user_status %}
+                <div id="head_menu">
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/humor/">幽默</a></li>
+                        <li><a href="/iq/">脑筋急转弯</a></li>
+                        <li><a href="/riddle/">谜语</a></li>
+                        <li><a href="/site/help/">帮助</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block footer %}
+        <div id="footer">
+            <div class="dashed_line"></div>
+            <span class="span_left">
+                © 2008 YouMoGan.com, all rights reserved
+            </span>
+            <span class="span_right">
+                <a target="_blank" href="/site/help/">关于幽默感</a>
+                ┊
+                <a target="_blank" href="/site/help/">帮助</a>
+            </span>
+        </div>
+        {% endblock %}
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-6845877-1");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+    </body>
+</html>
+{% comment %}
+模板结构,两级base
+如果在二级base中设置某个一级的block，则一级中的就被覆盖了
+一级base中没有{% block content %}
+分body和content便于二级页面需要全部替换body的布局与实现
+{% endcomment %}

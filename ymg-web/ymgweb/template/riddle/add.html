@@ -1,0 +1,38 @@
+{% extends 'riddle/riddle_base.html' %}
+{% block head_js %}
+<script type="text/javascript" src="/static/fckeditor/fckeditor.js"></script>
+{% endblock %}
+{% block title %}添加谜语 - 幽默感{% endblock %}
+
+{% block content %}
+<h1>添加谜语</h1>
+<div id="big_left">
+    {% include 'common/msg_div.html' %}
+    <form action="/riddle/add/" method="POST">
+        <table class="form_table">
+            {{form}}
+        </table>
+        <div class="form_action_box">
+            <input type="submit" class="cm_btn" value="发表" />
+        </div>
+        <script type="text/javascript">
+            <!--
+            var oFCKeditor_s = new FCKeditor( 'id_subject' ) ;
+            var oFCKeditor_c = new FCKeditor( 'id_content' ) ;
+            oFCKeditor_s.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor_c.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor_s.Config['CustomConfigurationsPath'] = oFCKeditor_s.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor_c.Config['CustomConfigurationsPath'] = oFCKeditor_c.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor_s.ToolbarSet = "Basic" ;
+            oFCKeditor_c.ToolbarSet = "Basic" ;
+            oFCKeditor_s.Height	= 100 ;
+            oFCKeditor_c.Height	= 100 ;
+            oFCKeditor_s.ReplaceTextarea();
+            oFCKeditor_c.ReplaceTextarea();
+            //-->
+        </script>
+    </form>
+</div>
+<div id="small_right">
+</div>
+{% endblock %}

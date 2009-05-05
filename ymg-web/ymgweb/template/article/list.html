@@ -1,0 +1,35 @@
+{% extends 'article/article_base.html' %}
+
+{% block title %}幽默列表 - 幽默感{% endblock %}
+{% load paginator %}
+
+{% block content %}
+<h1>list</h1>
+<div id="big_left">
+{% for article in object_list %}
+	<div class="list_box">
+		<a href="/article/view/{{article.key.id}}">
+		<div class="list_title">{{article.title}}</div>
+		</a>
+		<div class="list_status_bar">
+			{{article.author}}发布于{{ article.create_time|date:"Y/m/d H:i" }}
+		</div>
+		<div class="list_content">
+			{{article.content}}
+		</div>
+	</div>
+	<div class="list_view">
+		<div class="list_view_num">{{ article.view_count }}</div>
+		<a href="/article/view/{{article.key.id}}">
+		<div class="list_view_link">瞟一眼</div>
+		</a>
+		
+	</div>
+	<div class="list_sepbar"></div>
+{% endfor %}
+{% paginator %}
+</div>
+<div id="small_right">
+small
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+
+
+暂时没有使用了，所有编辑统一到后台
+
+
+{% extends 'humor/humor_base.html' %}
+{% block title %}修改幽默 - 幽默感{% endblock %}
+{% block head_js %}
+<script type="text/javascript" src="/static/fckeditor/fckeditor.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/humor/list/">幽默</a>
+</div>
+<h1>修改幽默</h1>
+<div id="big_left">
+    {% include 'common/msg_div.html' %}
+    <form action="/humor/edit/{{humor_id}}" method="POST">
+        <table class="form_table">
+            {{form}}
+        </table>
+        <div class="form_action_box">
+            <input type="submit" class="cm_btn" value="修改" />
+        </div>
+        <script type="text/javascript">
+            <!--
+            var oFCKeditor = new FCKeditor( 'id_content' ) ;
+            oFCKeditor.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor.Config['CustomConfigurationsPath'] = oFCKeditor.BasePath + 'null.xhtml.config.js' ;
+            //oFCKeditor.ToolbarSet = "Basic" ;
+            oFCKeditor.ToolbarSet = "Default" ;
+            oFCKeditor.Height	= 500 ;
+            oFCKeditor.ReplaceTextarea();
+            //-->
+        </script>
+    </form>
+</div>
+<div id="small_right">
+    small
+</div>
+{% endblock %}

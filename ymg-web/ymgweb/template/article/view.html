@@ -1,0 +1,53 @@
+{% extends 'article/article_base.html' %}
+
+{% block title %} - 幽默感{% endblock %}
+
+{% block content %}
+<div id="big_left">
+	<div class="trace_box">
+	<a href="/">首页</a>
+	>>
+	<a href="/">首页</a>
+	
+	</div>
+<div class="article_box">
+	<div class="article_title">
+		<table class="article_title_table">
+		<tr>
+			<th>{{article.title}}</th>
+			<td>
+				<div class="status">
+					时间：{{ article.create_time|date:"Y/m/d H:i" }}
+					<div class="dashed_line"></div>
+					点击：{{ article.view_count }}
+					<div class="dashed_line"></div>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<div class="article_content">
+	{{article.content}}
+	</div>
+	<div class="dashed_line"></div>
+	<div class="promote_box">
+		<li>aaa</li>
+		<li>aaa</li>
+		<li>aaa</li>
+	</div>
+</div>
+</div>
+<div id="small_right">
+<h3>最新文章</h3>
+	<ul>
+	<li><a href="/nieuws/141/Websites_Wijzijnblits_online%21" title="Gezamenlijk met communicatiebureau Wijzijnblits (www.wijzijnblits.nl)  heeft Footsteps enkele projecten afgerond. Vanuit het communicatie- en advertentieplan van Blits heeft Footsteps 3 websites gerealiseerd. " class="days_title">Websites Wijzijnblits online!</a></li>
+	<li><a href="/nieuws/129/Samenwerking_Blits_en_Footsteps" title="Vanaf heden mogen wij Blits visuele communicatie onze nieuwe partner noemen! Blits visuele communicatie heeft een verfrissende kijk op vormgeving, communicatie &eacute;n reclame. Door persoonlijke aandacht cre&euml;rt Blits de ideale uitstraling die naadloos aansluit op elk bedrijf! Een Blits Ontwerp helpt ondernemingen doelstellingen te behalen: een passende huisstijl, een duidelijke website of een effectieve advertentiecampagne. 
+" class="days_title">Samenwerking Blits en Footsteps</a></li>
+	<li><a href="/nieuws/125/Case_Communicatie_Ede" title="Case Communicatie uit Ede is partner geworden van Footsteps." class="days_title">Case Communicatie Ede</a></li>
+	<li><a href="/nieuws/97/ICMA%3A_webdesign_en_CMS" title="ICMA Online. Er werden verschillende partijen benaderd en daarbij kwam het systeem van Footsteps duidelijk als beste naar voren. Wij van ICMA International zijn bovendien goed te spreken over de flexibele doch actiegerichte houding van de medewerkers bij Footsteps. Ze hebben wat ons betreft een uitstekende vertaling gedaan van de identiteit van ICMA International naar www.icma.nl." class="days_title">ICMA: webdesign en CMS</a></li>
+	<li><a href="/nieuws/128/Nieuw_telefoonnummer" title="Wij zijn vanaf nu bereikbaar op 0318 712 400" class="days_title">Nieuw telefoonnummer</a></li>
+	<li><a href="/nieuws/130/Art_for_More_online" title="Exclusief voor u ontwerpt, ontwikkelt en vervaardigt Art for More kunstobjecten en geschenken voor iedere gelegenheid waarin uw boodschap extra aandacht verdient. " class="days_title">Art for More online</a></li>
+</ul>
+
+</div>
+{% endblock %}

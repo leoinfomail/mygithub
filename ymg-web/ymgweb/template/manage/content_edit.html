@@ -1,0 +1,40 @@
+{% extends 'manage/simple_base.html' %}
+{% block head_js %}
+<script type="text/javascript" src="/static/fckeditor/fckeditor.js"></script>
+{% endblock %}
+{% block content %}
+<h1>修改内容</h1>
+<div>
+    {% include 'common/msg_div.html' %}
+    <form action="/manage/content_edit/{{content_id}}" method="POST">
+        <table class="form_table">
+            {{form}}
+        </table>
+        <div class="form_action_box">
+            <input type="submit" class="cm_btn" value="修改" />
+        </div>
+        <script type="text/javascript">
+            <!--
+            var oFCKeditor_s = new FCKeditor( 'id_subject' ) ;
+            oFCKeditor_s.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor_s.Config['CustomConfigurationsPath'] = oFCKeditor_s.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor_s.ToolbarSet = "Default" ;
+            oFCKeditor_s.Height	= 300 ;
+            oFCKeditor_s.ReplaceTextarea();
+            var oFCKeditor = new FCKeditor( 'id_content' ) ;
+            oFCKeditor.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor.Config['CustomConfigurationsPath'] = oFCKeditor.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor.ToolbarSet = "Default" ;
+            oFCKeditor.Height	= 300 ;
+            oFCKeditor.ReplaceTextarea();
+            var oFCKeditor_a = new FCKeditor( 'id_content_a' ) ;
+            oFCKeditor_a.BasePath	= '/static/fckeditor/' ;
+            oFCKeditor_a.Config['CustomConfigurationsPath'] = oFCKeditor_a.BasePath + 'null.xhtml.config.js' ;
+            oFCKeditor_a.ToolbarSet = "Default" ;
+            oFCKeditor_a.Height	= 300 ;
+            oFCKeditor_a.ReplaceTextarea();
+            //-->
+        </script>
+    </form>
+</div>
+{% endblock %}

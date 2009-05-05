@@ -1,0 +1,58 @@
+{% extends 'manage/manage_base.html' %}
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/manage/url_list/">全站URL列表</a>
+</div>
+<div id="menu_left">
+    <ul id="side_menu">
+        <li><a href="/manage/">manage</a></li>
+        <li><a href="/manage/promotion/">promotion</a></li>
+        <li class="active"><a href="/manage/url_list/">url_list</a></li>
+    </ul>
+</div>
+<div id="menu_right">
+    <h1 align="center">全站URL列表</h1>
+    <h2>Main</h2>
+    <ul>
+        <li><a target="_blank" href="/manage/style_center/">/manage/style_center/</a></li>
+        <li><a target="_blank" href="/manage/">/manage/</a></li>
+    </ul>
+    <h2>User</h2>
+    <ul>
+        <li><a target="_blank" href="/user/join/">/user/join/</a></li>
+        <li><a target="_blank" href="/user/join_success/">/user/join_success/</a></li>
+        <li><a target="_blank" href="/user/login/">/user/login/</a></li>
+        <li><a target="_blank" href="/user/logout/">/user/logout/</a></li>
+        <li><a target="_blank" href="/user/edit/">/user/edit/</a></li>
+    </ul>
+    <h2>Cagegory&Article(Old)</h2>
+    <ul>
+        <li><a target="_blank" href="/category/add/">/category/add/</a></li>
+        <li><a target="_blank" href="/article/add/">/article/add/</a></li>
+        <li><a target="_blank" href="/article/list/">/article/list/</a></li>
+        <li><a target="_blank" href="/article/view/">/article/view/</a></li>
+        <li><a target="_blank" href="/article/edit/4">/article/edit/4</a></li>
+    </ul>
+    <h2>Humor</h2>
+    <ul>
+        <li><a target="_blank" href="/humor/add/">/humor/add/</a></li>
+        <li><a target="_blank" href="/humor/latest/">/humor/latest/</a></li>
+        <li><a target="_blank" href="/humor/view/">/humor/view/</a></li>
+        <li><a target="_blank" href="/humor/edit/4">/humor/edit/4</a></li>
+    </ul>
+    <h2>IQ</h2>
+    <ul>
+        <li><a target="_blank" href="/iq/add/">/iq/add/</a></li>
+        <li><a target="_blank" href="/iq/latest/">/iq/latest/</a></li>
+        <li><a target="_blank" href="/iq/view/">/iq/view/</a></li>
+        <li><a target="_blank" href="/iq/edit/4">/iq/edit/4</a></li>
+    </ul>
+    <h2>Riddle</h2>
+    <ul>
+        <li><a target="_blank" href="/riddle/add/">/riddle/add/</a></li>
+        <li><a target="_blank" href="/riddle/latest/">/riddle/latest/</a></li>
+        <li><a target="_blank" href="/riddle/view/">/riddle/view/</a></li>
+        <li><a target="_blank" href="/riddle/edit/4">/riddle/edit/4</a></li>
+    </ul>
+</div>
+{% endblock%}

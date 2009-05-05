@@ -1,0 +1,124 @@
+{% extends 'riddle/riddle_base.html' %}
+{% load filters %}
+{% block title %}{{riddle.subject|simple_truncate}} - 幽默感,幽默,笑话,幽默大全,笑话大全{% endblock %}
+
+{% block content %}
+<div class="trace_box">
+    <a href="/">首页</a> >> <a href="/riddle/">谜语</a> >> <a href="/riddle/view/{{riddle.key.id}}">{{riddle.subject|simple_truncate:20}}</a>
+</div>
+<div id="big_left">
+    <div class="article_box">
+        <div class="article_title">
+            <table class="article_title_table">
+                <tr>
+                    <th></th>
+                    <td>
+                        <div class="status">
+                            时间：{{ riddle.create_time|date:"Y/m/d" }}
+                            <div class="dashed_line"></div>
+                            点击：{{ riddle.view_count }}
+                            <div class="dashed_line"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="article_content question">
+            {{riddle.subject}}
+        </div>
+        <div id="show_answer" class="click_bar">查看答案</div>
+        <div id="the_answer" class="article_content answer" style="display:none;">
+            {{riddle.content}}
+        </div>
+        <script type="text/javascript">
+            window.addEvent('domready',function(){
+                var ansSlide=new Fx.Slide('the_answer');
+                $('show_answer').addEvent('click', function(e){
+                    e.stop();
+                    if ($('the_answer').getStyle('display')=='none') {
+                        $('the_answer').setStyle('display','block');
+                        ansSlide.hide();
+                    }
+                    ansSlide.toggle();
+                });
+            });
+        </script>
+        <div class="user_action">
+            <ul>
+                <li class="up" title="有点意思 顶到首页和推荐栏目去！">
+                    <a href="#" id="digg">不错(<span id="good_score" class="score_s">{{riddle.good_score}}</span>)</a>
+                    <a href="#" id="digged" style="display:none;">不错(<span id="good_score_" class="score_s">{{riddle.good_score}}</span>)</a>
+                </li>
+                <li class="down" title="没意思 踩到删除为止！">
+                    <a href="#" id="bury">不好(<span id="bad_score" class="score_s">{{riddle.bad_score}}</span>)</a>
+                    <a href="#" id="buryed" style="display:none;">不好(<span id="bad_score_" class="score_s">{{riddle.bad_score}}</span>)</a>
+                </li>
+            </ul>
+            <ul><div id="ack" class="user_action_ack"></div></ul>
+        </div>
+        <div class="detail_nav">
+            {%if riddle_pre%}
+            <p>前一篇：<a href="/riddle/view/{{riddle_pre.key.id}}">{{riddle_pre.subject|simple_truncate:35}}</a></p>
+            {%endif%}
+            {%if riddle_next%}
+            <p>后一篇：<a href="/riddle/view/{{riddle_next.key.id}}">{{riddle_next.subject|simple_truncate:35}}</a></p>
+            {%endif%}
+        </div>
+    </div>
+</div>
+<div id="small_right">
+    {% load recommend %}
+    {% riddle_acd %}
+</div>
+<script type="text/javascript">
+    // digg
+    var digg = $('digg');
+    var digged = $('digged');
+    var bury=$('bury');
+    var buryed=$('buryed');
+    var ack = $('ack');
+    var highlight = new Fx.Morph(ack, {
+        duration: 1500,
+        link: 'cancel',
+        transition: 'quad:out'
+    });
+    window.addEvent('domready',function(){
+        digg.addEvent('click',function(e) {
+            e.stop();
+            ack.set('html','Thanks');
+            highlight.start({
+                backgroundColor: ['#fff36f', '#fff'],
+                opacity: [1, 0]
+            });
+            new Request({
+                url: '/digg/30000/{{riddle.key.id}}'
+            }).send();
+            var score=parseInt($('good_score_').innerHTML);
+            $('good_score_').innerHTML=score+1;
+            digg.setStyle('display','none');
+            digged.setStyle('display','');
+        });
+        bury.addEvent('click',function(e) {
+            e.stop();
+            ack.set('html','Thanks');
+            highlight.start({
+                backgroundColor: ['#fff36f', '#fff'],
+                opacity: [1, 0]
+            });
+            new Request({
+                url: '/bury/30000/{{riddle.key.id}}'
+            }).send();
+            var score=parseInt($('bad_score_').innerHTML);
+            $('bad_score_').innerHTML=score+1;
+            bury.setStyle('display','none');
+            buryed.setStyle('display','');
+        });
+        digged.addEvent('click',function(e){
+            e.stop();
+        });
+        buryed.addEvent('click',function(e){
+            e.stop();
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'user/user_base.html' %}
+{% block head_js %}
+<script type="text/javascript" src="/static/fckeditor/fckeditor.js"></script>
+{% endblock %}
+{% block title %}编辑我在幽默感的信息{% endblock %}
+
+{% block content %}
+<h1>编辑我在幽默感的信息</h1>
+<div id="big_left">
+{% include 'common/msg_div.html' %}
+<form action="/user/edit/" method="POST">
+<table class="form_table">
+{{form}}
+<!-- <tr><th></th><td><input type="submit" class="cm_btn" value="提交" /></td></tr> -->
+</table>
+<div class="form_action_box">
+<input type="submit" class="cm_btn" value="提交" />
+</div>
+<script type="text/javascript">
+<!--
+var oFCKeditor = new FCKeditor( 'id_introduction' ) ;
+oFCKeditor.BasePath	= '/static/fckeditor/' ;
+oFCKeditor.Config['CustomConfigurationsPath'] = oFCKeditor.BasePath + 'null.xhtml.config.js' ;
+oFCKeditor.ToolbarSet = "Basic" ;
+//oFCKeditor.ToolbarSet = "Default" ;
+oFCKeditor.Height	= 200 ;
+oFCKeditor.ReplaceTextarea(); 
+//-->
+</script>
+</form>
+</div>
+<div id="small_right">
+<h2>完善你的信息</h2>
+<div>
+    <p>绝不公开你的Email。</p>
+    <p>是否接受邮件提醒完全由你自己决定。</p>
+    <p>建议填写常用的Email地址，这样你就不会错过精彩内容。</p>
+</div>
+</div>
+{% endblock %}

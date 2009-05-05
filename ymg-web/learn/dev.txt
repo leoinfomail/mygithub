@@ -1,0 +1,32 @@
+本地启动服务器
+python "D:\program\Google\google_appengine\dev_appserver.py" "D:\program\Google\studio\ws\ymg-web"
+到项目目录下D:\program\Google\studio\ws\ymg-web
+python manage.py runserver
+清除本地datastore
+python "D:\program\Google\google_appengine\dev_appserver.py" --clear_datastore "D:\program\Google\studio\ws\ymg-web"
+更新线上服务器
+python "D:\program\Google\google_appengine\appcfg.py" --email=xiaoshijie@gmail.com update "D:\program\Google\studio\ws\ymg-web"
+ --noisy --force
+取得log
+python "D:\program\Google\google_appengine\appcfg.py" --email=xiaoshijie@gmail.com request_logs "D:\program\Google\studio\ws\ymg-web" ymg-web.log
+
+
+#------------------------------------
+dev_appserver.py --datastore_path=/tmp/myapp_datastore myapp
+208.67.222.222
+208.67.220.220
+
+#-------------------------------------
+编码规范
+
+#coding=utf8
+
+类中域定义时，按照
+1, required fields
+2, not required fields
+3, methods
+用空格，或者空的行注释#分开
+
+#-------------------------------------
+leoyoung e*
+youmogan.com
